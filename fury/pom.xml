@@ -102,6 +102,14 @@
 		    <version>1.1.0</version>
 		</dependency>
 	    
+		<!-- db -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- 발키를 자바에서 사용하기 위한 디펜던시 -->
 		<!-- <dependency>
 		    <groupId>org.elasticsearch.client</groupId>

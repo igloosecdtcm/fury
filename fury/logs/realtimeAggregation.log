@@ -51510,3 +51510,212 @@ headers (names):  NULL
 [1] "커스텀 job10 - success"
 [1] "커스텀 job13 - success"
 [1] "커스텀 job20 - success"
+[1] "parser r script start"
+[1] "init r script start"
+필요한 패키지를 로딩중입니다: methods
+
+다음의 패키지를 부착합니다: ‘jsonlite’
+
+The following object is masked from ‘package:elastic’:
+
+    validate
+
+[1] "inti_function r script start"
+transport:  http 
+host:       localhost 
+port:       9200 
+path:       NULL 
+username:   NULL 
+password:   <secret> 
+errors:     simple 
+headers (names):  NULL 
+[1] "커스텀 job1 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "1 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job6 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "6 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job8 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "8 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job10 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "10 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job13 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "13 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job18 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "18 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job20 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "20 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939440 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "parser r script start"
+[1] "init r script start"
+필요한 패키지를 로딩중입니다: methods
+
+다음의 패키지를 부착합니다: ‘jsonlite’
+
+The following object is masked from ‘package:elastic’:
+
+    validate
+
+[1] "inti_function r script start"
+transport:  http 
+host:       localhost 
+port:       9200 
+path:       NULL 
+username:   NULL 
+password:   <secret> 
+errors:     simple 
+headers (names):  NULL 
+[1] "커스텀 job1 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "1 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job2 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "2 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job8 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "8 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job9 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "9 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job10 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "10 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job11 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "11 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job13 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "13 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job20 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "20 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525939500 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "parser r script start"
+[1] "init r script start"
+필요한 패키지를 로딩중입니다: methods
+
+다음의 패키지를 부착합니다: ‘jsonlite’
+
+The following object is masked from ‘package:elastic’:
+
+    validate
+
+[1] "inti_function r script start"
+transport:  http 
+host:       localhost 
+port:       9200 
+path:       NULL 
+username:   NULL 
+password:   <secret> 
+errors:     simple 
+headers (names):  NULL 
+[1] "커스텀 job1 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "1 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job6 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "6 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job8 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "8 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job10 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "10 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "s_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "d_info - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[7] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[8] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job13 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "13 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[5] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[6] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job18 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "18 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "risk - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"      
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         
+[1] "커스텀 job20 - empty_insert [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[1] "20 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"        
+[2] "1525940040 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"
+[3] "method - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"    
+[4] "0 - [Error in curl::curl_fetch_memory(url, handle = handle): Failed to connect to localhost port 9200: 연결이 거부됨\n]"         

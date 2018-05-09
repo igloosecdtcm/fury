@@ -3,8 +3,6 @@
  */
 package com.igloosec.fury.profile;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Timer;
 
@@ -15,17 +13,17 @@ import org.apache.felix.ipojo.annotations.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.igloosec.fury.stats.vo.FuryConfig;
 
 /*************************************************** 
  * <pre> 
 * 업무 그룹명: Fury
 * 서브 업무명: 
+<<<<<<< HEAD
+* 설       명: profile 스케쥴러 서비스 
+=======
 * 설       명: profile 스케쥴러 서비스
+>>>>>>> cd8d12047e0e832c784d3b1cb8f17c3bb9031053
 * 작   성  자: 이선구 [devleesk@igloosec.com]
 * 작   성  일: 2018. 5. 9.
 * Copyright ⓒIGLOO SEC. All Right Reserved
@@ -59,21 +57,10 @@ public class ProfileService {
 	******************************************************/ 
 	@Validate
 	private void start() {
-		logger.info("ProfileService start");
-		
-		try {
-			ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-			furyConfig = mapper.readValue(new File("./config/config.yaml"), FuryConfig.class);
-		} catch (JsonParseException e) {
-			logger.error(e.getMessage(), e);
-		} catch (JsonMappingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
-		}
+		logger.info("ProfileService  start");
+		furyConfig = new FuryConfig().getFuryConfig("./config/config.yaml");
 		
 		Calendar date = Calendar.getInstance();
-		date.set(Calendar.SECOND, 0);
 		date.set(Calendar.MILLISECOND, 0);
 		// test
 		timer = new Timer("KafkaClientProducer");

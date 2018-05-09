@@ -3,6 +3,16 @@
  */
 package com.igloosec.fury.stats.vo;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 /*************************************************** 
  * <pre> 
 * 업무 그룹명: Fury
@@ -14,6 +24,8 @@ package com.igloosec.fury.stats.vo;
  * </pre> 
  ***************************************************/
 public class FuryConfig {
+	private final Logger logger = LoggerFactory.getLogger(FuryConfig.class);
+	
 	/** valkyrie info */
 	private String valkyrieIp;
 	private int valkyriePort;
@@ -42,6 +54,11 @@ public class FuryConfig {
 	private String kafkaIp;
 	private String kafkaPort;
 	private String topic;
+	
+	/** profile info */
+	private String profileScriptPath;
+	private String profileTsvDirPath;
+	private String profileLogPath;
 	
 	public String getValkyrieIp() {
 		return valkyrieIp;
@@ -195,4 +212,43 @@ public class FuryConfig {
 		this.topic = topic;
 	}
 	
+	
+	public String getProfileScriptPath() {
+		return profileScriptPath;
+	}
+
+	public void setProfileScriptPath(String profileScriptPath) {
+		this.profileScriptPath = profileScriptPath;
+	}
+
+	public String getProfileTsvDirPath() {
+		return profileTsvDirPath;
+	}
+
+	public void setProfileTsvDirPath(String profileTsvDirPath) {
+		this.profileTsvDirPath = profileTsvDirPath;
+	}
+
+	public String getProfileLogPath() {
+		return profileLogPath;
+	}
+
+	public void setProfileLogPath(String profileLogPath) {
+		this.profileLogPath = profileLogPath;
+	}
+
+	public FuryConfig getFuryConfig(String configPath){
+		FuryConfig furyConfig = new FuryConfig();
+		try {
+			ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+			furyConfig = mapper.readValue(new File(configPath), FuryConfig.class);
+		} catch (JsonParseException e) {
+			logger.error(e.getMessage(), e);
+		} catch (JsonMappingException e) {
+			logger.error(e.getMessage(), e);
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+		}
+		return furyConfig;
+	}
 }

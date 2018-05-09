@@ -21,3 +21,13 @@ batchScriptPath : ./R/batchScript.r
 batchJobPath : ./R/batchJobs.yaml
 batchLogPath : logs/batchAggregation.log
 batchIndexingSleep : 0
+
+#kafka info
+kafkaIp : localhost
+kafkaPort : 9092
+topic : my-topic
+
+#profile info
+profileScriptPath : ./R/profile/profileScript.r
+profileTsvDirPath : ./tsv
+profileLogPath : logs/profile.log

@@ -3,25 +3,17 @@
  */
 package com.igloosec.fury.stats;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Timer;
 
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Invalidate;
 import org.apache.felix.ipojo.annotations.Provides;
-import org.apache.felix.ipojo.annotations.Requires;
 import org.apache.felix.ipojo.annotations.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.igloosec.fury.stats.vo.FuryConfig;
-import com.igloosec.jdbc.service.DBHandler;
 
 /*************************************************** 
  * <pre> 
@@ -38,9 +30,6 @@ import com.igloosec.jdbc.service.DBHandler;
 public class StatsService{
 	private final Logger logger = LoggerFactory.getLogger(StatsService.class);
 
-	/** 스케쥴러에서 사용할 디비핸틀 */
-	@Requires
-	DBHandler dbHandler;
 	
 	/** 스케쥴 */
 	private Timer timer;
@@ -70,17 +59,7 @@ public class StatsService{
 		Calendar date = Calendar.getInstance();
 		date.set(Calendar.SECOND, 0);
 		date.set(Calendar.MILLISECOND, 0);
-		
-		try {
-			ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-			furyConfig = mapper.readValue(new File("./config/config.yaml"), FuryConfig.class);
-		} catch (JsonParseException e) {
-			logger.error(e.getMessage(), e);
-		} catch (JsonMappingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
-		}
+		furyConfig = new FuryConfig().getFuryConfig("./config/config.yaml");
 
 		// 1분단위로 실시간 집계
 		timer = new Timer("RealtimeAggregationTask");
@@ -101,12 +80,4 @@ public class StatsService{
 		timer.cancel();
 		timer = null;
 	}
-	/***************************************************** 
-	 * 메소드 설명
-	 * @see com.igloosec.realtime.RealtimeStatsService#getDBHandler()
-	******************************************************/ 
-	public DBHandler getDBHandler() {
-		return this.dbHandler;
-	}
-	
 }

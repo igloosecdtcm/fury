@@ -5,11 +5,20 @@ package com.igloosec.fury.profile;
 
 import java.util.Calendar;
 import java.util.Properties;
+import java.util.Random;
 import java.util.TimerTask;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.igloosec.fury.profile.test.JsonParser;
+import com.igloosec.fury.profile.test.vo.Doc;
+import com.igloosec.fury.profile.test.vo.TestData;
 
 /*************************************************** 
  * <pre> 
@@ -22,6 +31,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
  * </pre> 
  ***************************************************/
 public class KafkaClientProducer extends TimerTask{
+	private final Logger logger = LoggerFactory.getLogger(KafkaClientProducer.class);
 
 	/***************************************************** 
 	 * 메소드 설명
@@ -29,25 +39,17 @@ public class KafkaClientProducer extends TimerTask{
 	******************************************************/ 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		Calendar date = Calendar.getInstance();
 		date.set(Calendar.MILLISECOND, 0);
 		String time = Long.toString(date.getTimeInMillis() / 1000);
-		String tmpJsonData = 
-				"{" + 
-						"\"create_date\" : " + time + "," +
-						"\"s_info\" : \"192.168.90.99\"," +
-						"\"s_port\" : 5678," +
-						"\"d_info\" : \"192.168.0.1\"," +
-						"\"d_port\" : 1234," +
-						"\"protocol\" : \"UDP\"," +
-						"\"tos_byte\" : " + 10 + "," +
-						"\"method\" : \"GET\"" +
-				"}";
-
-		ProducerRecord<String, String> pr = new ProducerRecord<String, String>("my-topic", time, tmpJsonData);
+		TestData testData = new JsonParser().getTestData();
 		Properties props = new Properties();
-		
+		ObjectMapper mapper = new ObjectMapper();
+		Random random = new Random();    
+		int[] random_num = new int[3];
+		for (int i = 0; i < random_num.length; i++) {
+			random_num[i] = random.nextInt(100 + 1) + 1;
+		}
 		props.put("bootstrap.servers", "localhost:9092");
 		props.put("acks", "all");
 		props.put("retries", 0);
@@ -58,7 +60,18 @@ public class KafkaClientProducer extends TimerTask{
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		Producer<String, String> producer = new KafkaProducer<>(props);
 
-		producer.send(pr);
+		for (int num : random_num) {
+			ProducerRecord<String, String> pr = null;
+			try {
+				pr = new ProducerRecord<String, String>("my-topic", time, mapper.writeValueAsString(testData.getResponse().getDocs().get(num)));
+			} catch (JsonProcessingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (pr != null)
+				producer.send(pr);
+		}
+
 		producer.close();
 	}
 	public static void main(String[] args) {

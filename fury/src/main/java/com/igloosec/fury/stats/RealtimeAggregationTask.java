@@ -10,17 +10,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.TimerTask;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.igloosec.fury.db.manager.JdbcConnect;
 import com.igloosec.fury.stats.vo.FuryConfig;
 import com.igloosec.fury.stats.vo.JobInfo;
 
@@ -39,10 +38,8 @@ public class RealtimeAggregationTask extends TimerTask {
 
 	/** job 정보 */
 	private List<JobInfo> jobs = new ArrayList<>();
-	
 	private StatsService statsService;
 	private FuryConfig furyConfig;
-
 	private int jobMinutes = 0;
 	
 	public RealtimeAggregationTask(StatsService statsService, FuryConfig furyConfig) {
@@ -117,11 +114,21 @@ public class RealtimeAggregationTask extends TimerTask {
 	 * @exception    
 	******************************************************/ 
 	private void getJobs(){
-		//db에서 job 정보 가져온다.
-		/*if(jobs.isEmpty()) {
-			List<Map<String, Object>> jobs = statsService.getDBHandler().getNColumnList("logger", "select id, title, schedule, match, function, groupBy, having, limit, type from ? where type = 'y'");
-			logger.info("job size - ",jobs);
+		JdbcConnect jc = new JdbcConnect();
+		List<JobInfo> realtimeJobs = new ArrayList<>();
+		
+		//select 1 as "id", '커스텀 job1' as "title", 1 as "schedule", 'category == '||chr(39)||'E007'||chr(39)' & !method %in% c(\"null\",\"-\")' as "filter", 'count' as "function", 's_info.keyword' as "groupBy", '?' sd "having", 1 as "limit", 'asc' as "sort", 's_info.keyword' as "filedset", 'S' as "type", 'aggs' as "index", 'my_topic' as "topic" from dual;
+		String sql = "select 1 as \"id\", '커스텀 job1' as \"title\", 1 as \"schedule\", "
+				+ "'category == '||chr(39)||'E007'||chr(39)||' & !method %in% c(\"null\",\"-\")' as \"filter\", 'count' as "
+				+ "\"function\", 's_info.keyword' as \"groupBy\", '?' as \"having\", 1 as \"limit\", 'asc' as \"sort\", "
+				+ "'s_info.keyword' as \"filedset\", 'S' as \"type\", 'aggs' as \"index\", 'my_topic' as \"topic\" from dual";
+		List<Map<String, Object>> jobs = jc.select(sql);
+
+		if(jobs.isEmpty()) {
 			for (Map<String, Object> job :jobs){
+				Calendar endDate = Calendar.getInstance();
+				endDate.set(Calendar.MILLISECOND, 0);
+				endDate.set(Calendar.SECOND, 0);
 				int id = Integer.parseInt(job.get("id").toString());
 				String title = job.get("title").toString();
 				int schedule = Integer.parseInt(job.get("schedule").toString());
@@ -131,30 +138,11 @@ public class RealtimeAggregationTask extends TimerTask {
 				String having = job.get("having").toString();
 				int limit = Integer.parseInt(job.get("limit").toString());
 				char type = (char) job.get("type");
-				this.jobs.add(new JobInfo(id, title, schedule, match, function, groupBy, having, limit, type));
+				realtimeJobs.add(new JobInfo(id, title, schedule, match, function, groupBy, having, limit, type, endDate.getTimeInMillis() / 1000, endDate.getTimeInMillis() / 1000));
 			}
-		}*/
-		
-		/* db 연동 전, 로컬 테스트 */
-		List<JobInfo> realtimeJobs = new ArrayList<>();
-		
-		try {
-			ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-			CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, JobInfo.class);
-			realtimeJobs = mapper.readValue(new File("./R/realtime_test_jobs.yaml"), collectionType);
-		} catch (JsonParseException e) {
-			logger.error(e.getMessage(), e);
-		} catch (JsonMappingException e) {
-			logger.error(e.getMessage(), e);
-		} catch (IOException e) {
-			logger.error(e.getMessage(), e);
 		}
 		
 		for (JobInfo job :realtimeJobs){
-			Calendar endDate = Calendar.getInstance();
-			endDate.set(Calendar.MILLISECOND, 0);
-			endDate.set(Calendar.SECOND, 0);
-			job.setEndDate(endDate.getTimeInMillis() / 1000);
 			if(jobMinutes >= job.getSchedule() && jobMinutes%job.getSchedule() == 0) {
 				Calendar startDate = Calendar.getInstance();
 				startDate.set(Calendar.MILLISECOND, 0);
@@ -183,9 +171,6 @@ public class RealtimeAggregationTask extends TimerTask {
 	******************************************************/ 
 	private void runAggregation() {
 		Process proc = null;
-		
-		
-		
 		ProcessBuilder pb = null;
 		
 		try {
