@@ -1,0 +1,23 @@
+#valkyrie info
+valkyrieIp : localhost
+valkyriePort : 9200
+valkyrieIndex : sniper
+valkyrieIndexType : _doc
+
+#aggregation info
+aggregationIp : localhost
+aggregationPort : 9200
+aggregationIndex : aggregation
+aggregationIndexType : _doc
+
+#realtime state info
+realtimeScriptPath : ./R/realtimeScript.r
+realtimeJobPath : ./R/realtimeJobs.yaml
+realtimeLogPath : logs/realtimeAggregation.log
+realtimeIndexingSleep : 0
+
+#batch state info
+batchScriptPath : ./R/batchScript.r
+batchJobPath : ./R/batchJobs.yaml
+batchLogPath : logs/batchAggregation.log
+batchIndexingSleep : 0

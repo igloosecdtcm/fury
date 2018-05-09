@@ -1,0 +1,157 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.igloosec</groupId>
+  <artifactId>fury</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>fury</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.4.0</version>
+			<scope>provided</scope>
+		</dependency>
+	 	<dependency>
+	 		<groupId>org.apache.felix</groupId>
+	 		<artifactId>org.apache.felix.ipojo.annotations</artifactId>
+	 		<version>1.11.0</version>
+	 		<scope>provided</scope>
+	 	</dependency>
+	 	<dependency>
+	 		<groupId>org.apache.felix</groupId>
+	 		<artifactId>org.apache.felix.gogo.runtime</artifactId>
+	 		<version>0.10.0</version>
+	 		<scope>provided</scope>
+	 	</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.igloosec.tm</groupId>
+			<artifactId>db.manager</artifactId>
+			<version>4.3.1.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.igloosec.tm</groupId>
+			<artifactId>property.manager</artifactId>
+			<version>4.3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		  	<groupId>commons-io</groupId>
+		  	<artifactId>commons-io</artifactId>
+		  	<version>2.4</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.igloosec.sparrow</groupId>
+		  <artifactId>Commons</artifactId>
+		  <version>[1.0.0.20,)</version>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>jdbc</artifactId>
+			<version>11.2.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		    <version>1.7.5</version>
+		</dependency>
+		<!-- json, yaml 파서 -->
+	    <dependency>
+	        <groupId>com.fasterxml.jackson.dataformat</groupId>
+	        <artifactId>jackson-dataformat-yaml</artifactId>
+	        <version>2.3.0</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-databind</artifactId>
+	        <version>2.2.3</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.apache.commons</groupId>
+	        <artifactId>commons-lang3</artifactId>
+	        <version>3.4</version>
+	    </dependency>
+	    
+	    <!-- kafka -->
+	    <dependency>
+		    <groupId>org.apache.kafka</groupId>
+		    <artifactId>kafka-clients</artifactId>
+		    <version>1.1.0</version>
+		</dependency>
+	    
+		<!-- 발키를 자바에서 사용하기 위한 디펜던시 -->
+		<!-- <dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>elasticsearch-rest-high-level-client</artifactId>
+		    <version>6.2.3</version>
+		</dependency> -->
+	</dependencies>
+	<!-- <repositories>
+		<repository>
+		    <id>elastic-lucene-snapshots</id>
+		    <name>Elastic Lucene Snapshots</name>
+		    <url>http://s3.amazonaws.com/download.elasticsearch.org/lucenesnapshots/00142c9</url>
+		    <releases><enabled>true</enabled></releases>
+		    <snapshots><enabled>false</enabled></snapshots>
+		</repository>
+	</repositories> -->
+	<build>
+  		<finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
+	  	<plugins>
+		  	<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-jar-plugin</artifactId>
+			    <configuration>
+			        <archive>
+			            <manifest>
+			                <addClasspath>true</addClasspath>
+			                <classpathPrefix>lib/</classpathPrefix>
+			                <mainClass>com.igloosec.fury.StatsService</mainClass>
+			            </manifest>
+			        </archive>
+			    </configuration>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-dependency-plugin</artifactId>
+			    <executions>
+			        <execution>
+			            <id>copy</id>
+			            <phase>install</phase>
+			            <goals>
+			                <goal>copy-dependencies</goal>
+			            </goals>
+			            <configuration>
+			                <outputDirectory>
+			                    ${project.build.directory}/lib
+			                </outputDirectory>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
+	  	</plugins>
+	</build>
+</project>

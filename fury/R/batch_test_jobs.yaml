@@ -1,0 +1,315 @@
+---
+- id: 1
+  title: "커스텀 job1"
+  schedule: 1
+  match: "category == 'E002' & s_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$' & !method %in% c(\"null\"\
+    ,\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword"
+  having: "?"
+  limit: 1
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 2
+  title: "커스텀 job2"
+  schedule: 5
+  match: "category == 'E007' & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "risk"
+  having: "?"
+  limit: 5
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 3
+  title: "커스텀 job3"
+  schedule: 10
+  match: "category == 'E007'"
+  function: "?"
+  groupBy: "method.keyword,risk"
+  having: "?"
+  limit: 10
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 4
+  title: "커스텀 job4"
+  schedule: 30
+  match: "s_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword"
+  having: "?"
+  limit: 30
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 5
+  title: "커스텀 job5"
+  schedule: 60
+  match: "!method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,method.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 6
+  title: "커스텀 job6"
+  schedule: 2
+  match: "category == 'E001' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,method.keyword"
+  having: "?"
+  limit: 10
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 7
+  title: "커스텀 job7"
+  schedule: 3
+  match: "category == 'E001' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "d_info.keyword,method.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 8
+  title: "커스텀 job8"
+  schedule: 1
+  match: "category == 'E001'"
+  function: "?"
+  groupBy: "s_info.keyword,method.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 9
+  title: "커스텀 job9"
+  schedule: 5
+  match: "category == 'E004' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 10
+  title: "커스텀 job10"
+  schedule: 1
+  match: "category == 'E002' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,method.keyword"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 11
+  title: "커스텀 job11"
+  schedule: 5
+  match: "category == 'E002' & s_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$' & !method %in% c(\"null\"\
+    ,\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword"
+  having: "?"
+  limit: 1
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 12
+  title: "커스텀 job12"
+  schedule: 3
+  match: "category == 'E003' & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "risk"
+  having: "?"
+  limit: 5
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 13
+  title: "커스텀 job13"
+  schedule: 1
+  match: "category == 'E009' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "method.keyword,risk"
+  having: "?"
+  limit: 10
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 14
+  title: "커스텀 job14"
+  schedule: 10
+  match: "category == 'E008' & s_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword"
+  having: "?"
+  limit: 30
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 15
+  title: "커스텀 job15"
+  schedule: 30
+  match: "category == 'E014' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,method.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 16
+  title: "커스텀 job16"
+  schedule: 20
+  match: "category == 'E011' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword,d_info.keyword,method.keyword"
+  having: "?"
+  limit: 10
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 17
+  title: "커스텀 job17"
+  schedule: 60
+  match: "category == 'E007' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "d_info.keyword,method.keyword,risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 18
+  title: "커스텀 job18"
+  schedule: 2
+  match: "category == 'E002' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "risk"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 19
+  title: "커스텀 job19"
+  schedule: 15
+  match: "category == 'E004' & d_info %like% '^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$'\
+    \ & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "s_info.keyword"
+  having: "?"
+  limit: 60
+  type: "S"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
+- id: 20
+  title: "커스텀 job20"
+  schedule: 1
+  match: "category == 'E003' & !method %in% c(\"null\",\"-\")"
+  function: "?"
+  groupBy: "method.keyword"
+  having: "?"
+  limit: 60
+  type: "P"
+  startDate: 1525324140000
+  endDate: 1525324200000
+  batchId: 0
+  jobId: 0
+  startTime: 0
+  batchCount: 0
